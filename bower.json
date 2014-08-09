@@ -1,0 +1,29 @@
+{
+  "name": "purescript-chai",
+  "version": "0.0.1",
+  "homepage": "https://github.com/CapillarySoftware/purescript-chai",
+  "authors": [
+    "Isaac Shapira <fresheyeball@gmail.com>"
+  ],
+  "description": "Chai bindings for PureScript",
+  "main": "src/Test/Chai.purs",
+  "keywords": [
+    "Purescript",
+    "Mocha",
+    "Chai"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "purescript-easy-ffi": "~1.0.1",
+    "chai": "~1.9.1"
+  },
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules",
+    "output",
+    "bower.json",
+    "Gruntfile.js",
+    "package.json"
+  ]
+}
