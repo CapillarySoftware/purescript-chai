@@ -1,5 +1,5 @@
 # Module Documentation
-
+[![Build Status](https://travis-ci.org/CapillarySoftware/purescript-chai.svg?branch=master)](https://travis-ci.org/CapillarySoftware/purescript-chai)
 
 ## Module Test.Chai
 
