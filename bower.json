@@ -15,7 +15,7 @@
   "license": "MIT",
   "dependencies": {
     "purescript-easy-ffi": "~1.0.1",
-    "chai": "~1.9.1"
+    "chai": "~1.10.0"
   },
   "ignore": [
     "**/.*",
