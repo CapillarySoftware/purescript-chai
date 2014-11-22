@@ -1,6 +1,8 @@
 # Module Documentation
 
 [![Build Status](https://travis-ci.org/CapillarySoftware/purescript-chai.svg?branch=master)](https://travis-ci.org/CapillarySoftware/purescript-chai)
+[![Bower version](https://badge.fury.io/bo/purescript-chai.svg)](http://badge.fury.io/bo/purescript-chai)
+[![Dependency Status](https://www.versioneye.com/user/projects/547003628101062843000326/badge.svg?style=flat)](https://www.versioneye.com/user/projects/547003628101062843000326)
 
 ## Module Test.Chai
 
