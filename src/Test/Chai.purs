@@ -15,8 +15,12 @@ foreign import data Chai :: !
 data Expect              = Expect
 data Error               = Error 
 
+foreign import chai
+  "var chai = typeof chai === 'undefined' ? require('chai') : chai"
+  :: forall a. a
+
 expect                   :: forall a. a -> Expect
-expect                   = unsafeForeignFunction ["source"] "chai.expect(source)"
+expect                   = unsafeForeignFunction ["chai", "source", ""] "chai.expect(source)" $ chai
 
 type Expectation         = forall a e. Expect -> a -> Eff (chai :: Chai | e) Unit
 bindExpectation        x = unsafeForeignProcedure ["expect", "target", ""] $ "expect." ++ x ++ "(target)"
