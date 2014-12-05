@@ -15,8 +15,20 @@ foreign import data Chai :: !
 data Expect              = Expect
 data Error               = Error 
 
+foreign import chai
+  """var chai = (function() {
+    if (typeof window === 'undefined') {
+      // this is Node.js
+      return require('chai');
+    } else {
+      // in the browser; `chai` should already be defined on `window`
+      return window.chai;
+    }
+  })()"""
+  :: forall a. a
+
 expect                   :: forall a. a -> Expect
-expect                   = unsafeForeignFunction ["source"] "chai.expect(source)"
+expect                   = unsafeForeignFunction ["chai", "source"] "chai.expect(source)" $ chai
 
 type Expectation         = forall a e. Expect -> a -> Eff (chai :: Chai | e) Unit
 bindExpectation        x = unsafeForeignProcedure ["expect", "target", ""] $ "expect." ++ x ++ "(target)"
