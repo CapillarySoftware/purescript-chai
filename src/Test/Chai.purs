@@ -73,6 +73,12 @@ toInclude                = bindExpectation "to.include"
 toNotInclude             :: Expectation
 toNotInclude             = bindExpectation "to.not.include"
 
+toBeOk                   :: Expectation
+toBeOk                   = bindExpectation "to.be.ok"
+
+toNotBeOk                :: Expectation
+toNotBeOk                = bindExpectation "to.not.be.ok"
+
 type ErrorExpectation    = forall eff. Expect -> Error -> Eff (chai :: Chai | eff) Unit
 
 toThrow                  :: ErrorExpectation
