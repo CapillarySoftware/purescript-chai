@@ -6,7 +6,7 @@ module Test.Chai
   , toBeAbove, toNotBeAbove, toBeAtLeast, toNotBeAtLeast
   , toBeBelow, toNotBeBelow, toBeAtMost, toNotBeAtMost
   , toInclude, toNotInclude
-  , toThrow, toNotThrow, ErrorExpectation(..)) where
+  , toThrow, toNotThrow, toBeOk, toNotBeOk, ErrorExpectation(..)) where
 
 import Control.Monad.Eff
 import Data.Foreign.EasyFFI
