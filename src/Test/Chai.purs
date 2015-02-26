@@ -73,11 +73,12 @@ toInclude                = bindExpectation "to.include"
 toNotInclude             :: Expectation
 toNotInclude             = bindExpectation "to.not.include"
 
-toBeOk                   :: Expectation
-toBeOk                   = bindExpectation "to.be.ok"
+toBeOk                   :: Expect -> Eff (chai :: Chai) Unit
+toBeOk                  x  = unsafeForeignProcedure ["expect", ""] $ "expect.to.be.ok"
 
-toNotBeOk                :: Expectation
-toNotBeOk                = bindExpectation "to.not.be.ok"
+
+toNotBeOk                :: Expect -> Eff (chai :: Chai) Unit
+toNotBeOk               x  = unsafeForeignProcedure ["expect", ""] $ "expect.to.not.be.ok"
 
 type ErrorExpectation    = forall eff. Expect -> Error -> Eff (chai :: Chai | eff) Unit
 
