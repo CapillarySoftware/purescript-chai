@@ -6,7 +6,7 @@ module Test.Chai
   , toBeAbove, toNotBeAbove, toBeAtLeast, toNotBeAtLeast
   , toBeBelow, toNotBeBelow, toBeAtMost, toNotBeAtMost
   , toInclude, toNotInclude
-  , toThrow, toNotThrow, ErrorExpectation(..)) where
+  , toThrow, toNotThrow, toBeOk, toNotBeOk, ErrorExpectation(..)) where
 
 import Control.Monad.Eff
 import Data.Foreign.EasyFFI
@@ -72,6 +72,13 @@ toInclude                :: Expectation
 toInclude                = bindExpectation "to.include"
 toNotInclude             :: Expectation
 toNotInclude             = bindExpectation "to.not.include"
+
+toBeOk                   :: forall e. Expect -> Eff (chai :: Chai|e) Unit
+toBeOk                  x  = unsafeForeignProcedure ["expect", ""] $ "expect.to.be.ok"
+
+
+toNotBeOk                :: forall e. Expect -> Eff (chai :: Chai|e) Unit
+toNotBeOk               x  = unsafeForeignProcedure ["expect", ""] $ "expect.to.not.be.ok"
 
 type ErrorExpectation    = forall eff. Expect -> Error -> Eff (chai :: Chai | eff) Unit
 
